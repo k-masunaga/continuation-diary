@@ -11,7 +11,7 @@
         -# .body__mypage__create__diary__notice
         -#   ※目標設定後に投稿可能になります。
       .body__mypage__create__objective
-        -# = link_to "目標を設定する", new_objective_path, method: :get, class: 'btn'
+        = link_to "目標を設定する", new_objective_path, method: :get, class: 'btn'
     .body__mypage__body
       .body__mypage__body__diaries
         .body__mypage__body__diaries__topic
@@ -24,10 +24,11 @@
       .body__mypage__body__info
         .body__mypage__body__info__title
           設定した目標一覧
-        -# .body__mypage__body__info__details
-        -#   - @objectives.each do |objective|
-        -#     .body__mypage__body__info__details__detail
-        -#       = link_to objective_amounts_path(objective.id) do
-        -#         - objective.aim + "の記録を追加"
+        .body__mypage__body__info__details
+          - @objectives.each do |objective|
+            .body__mypage__body__info__details__detail
+              -# = link_to objective_amounts_path(objective.id) do
+              = link_to "#" do
+                - objective.aim + "の記録を追加"
 .footer
-  gow-diary
+  continuation-diary

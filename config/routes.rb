@@ -7,4 +7,7 @@ Rails.application.routes.draw do
       get 'show'
     end
   end
+
+  resources :objectives, only: [:index, :new, :create]
+
 end
