@@ -9,6 +9,10 @@ class ObjectivesController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def show
+    @objective = Objective.find(params[:id])
+  end
+
   private
   def post_params
     params.require(:objective).permit(:aim, :unit).merge(user_id: current_user.id)

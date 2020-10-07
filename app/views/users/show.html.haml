@@ -16,19 +16,19 @@
       .body__mypage__body__diaries
         .body__mypage__body__diaries__topic
           記録一覧
-        .body__mypage__body__diaries__diary
-          .body__mypage__body__diaries__diary__title
-            タイトル
-          .body__mypage__body__diaries__diary__date
-            2020年9月3日
+        .body__mypage__body__diaries__field
+          .body__mypage__body__diaries__field__diary
+            .body__mypage__body__diaries__field__diary__title
+              タイトル
+            .body__mypage__body__diaries__field__diary__date
+              2020年9月3日
       .body__mypage__body__info
         .body__mypage__body__info__title
           設定した目標一覧
         .body__mypage__body__info__details
           - @objectives.each do |objective|
             .body__mypage__body__info__details__detail
-              -# = link_to objective_amounts_path(objective.id) do
-              = link_to "#" do
+              = link_to objective_path(objective.id) do
                 - objective.aim + "の記録を追加"
 .footer
   continuation-diary

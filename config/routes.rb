@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :objectives, only: [:index, :new, :create]
-
+  resources :objectives, only: [:new, :create] do
+    member do
+      get 'show'
+    end
+  end
 end
