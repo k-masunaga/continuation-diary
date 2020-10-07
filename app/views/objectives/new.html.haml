@@ -1,0 +1,17 @@
+.body
+  .body__objective
+    .body__objective__head
+      目標を設定する
+    .body__objective__topic
+      ※項目を登録してください
+    .body__objective__exsample1
+      例）　目標：ジョギング　単位：km
+    .body__objective__exsample2
+      例）　目標：読書　単位：分
+    .body__objective__registration
+      = form_with model: @objective, url: objectives_path, class: :form, local: true do |form|
+        = form.text_field :aim, placeholder: :目標, class: :form__title
+        = form.text_field :unit, placeholder: :単位, class: :form__text
+        = form.submit '登録する', class: :form__btn
+.footer
+  continuation-diary
