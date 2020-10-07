@@ -6,12 +6,15 @@
       .main-body__objective-body__field__topic
         ※本日実践した量もしくは時間を入力してください
       .main-body__objective-body__field__form
-        .main-body__objective-body__field__form__amount
-          値を入力
-        .main-body__objective-body__field__form__unit
-          時間
-        .main-body__objective-body__field__form__submit
-          追加する
+        = form_with model: @amount, url: objective_amounts_path(@objective.id), local: true do |form|
+          .main-body__objective-body__field__form__amount
+            = form.number_field :amount
+            = @objective.unit
+            = form.submit '追加する'
+          -# .main-body__objective-body__field__form__unit
+          -#   = @objective.unit
+          -# .main-body__objective-body__field__form__submit
+          -#   = form.submit '追加する'
     .main-body__objective-body__info
       .main-body__objective-body__info__record
         .main-body__objective-body__info__record__title

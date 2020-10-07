@@ -11,6 +11,7 @@ class ObjectivesController < ApplicationController
 
   def show
     @objective = Objective.find(params[:id])
+    @amount = Amount.new
   end
 
   private
