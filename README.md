@@ -63,13 +63,3 @@ read.me
 ### Association
 - belongs_to :objectives
 
- ## diaries_objectivesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|diary_id|integer|null: false, foreign_key: true|
-|objective_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :diary
-- belongs_to :objective
