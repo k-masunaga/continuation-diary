@@ -1,2 +1,0 @@
-class DiariesObjective < ApplicationRecord
-end
