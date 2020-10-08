@@ -3,8 +3,7 @@ read.me
 ## 機能
 - 投稿機能
 - ログイン機能
-- 検索機能
-- 絞り込み機能
+- 詳細閲覧機能
 
 
 # DBテーブル構成
@@ -33,10 +32,9 @@ read.me
 |long_term_goals|string|null: false|
 |plan|string|null: false|
 |remark|string| |
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :diaries_objectives
-- has_many :objectives, through: :diaries_objectives
 - belongs_to :user
 
  ## objectivesテーブル
@@ -48,8 +46,6 @@ read.me
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :diaries_objectives
-- has_many :diaries, through: :diaries_objectives
 - has_many :amount
 - belongs_to :user
 
