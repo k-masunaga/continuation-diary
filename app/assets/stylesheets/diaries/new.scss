@@ -1,0 +1,18 @@
+.body__diary-body {
+  height: 100%;
+  width: 50%;
+  background-color: white;
+  &__title {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 1px solid gray;
+  }
+  &__form {
+    margin: 20px 0 20px 40px;
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -7,9 +7,8 @@
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
     .body__mypage__create
       .body__mypage__create__diary
-        -# = link_to "記録を投稿する", objective_amount_index_path, method: :get, class: 'btn'
-        -# .body__mypage__create__diary__notice
-        -#   ※目標設定後に投稿可能になります。
+        = link_to "日記を投稿する", new_diary_path, method: :get, class: 'btn'
+        .body__mypage__create__diary__notice
       .body__mypage__create__objective
         = link_to "目標を設定する", new_objective_path, method: :get, class: 'btn'
     .body__mypage__body

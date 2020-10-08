@@ -1,0 +1,43 @@
+.body
+  .body__diary-body
+    .body__diary-body__title
+      日記の投稿
+    .body__diary-body__form
+      = form_with model: @diary, url: diaries_path, local: true do |f|
+        .body__diary-body__form__title
+          タイトル
+          .body__diary-body__form__title_form
+            = f.text_field :title, plcaceholer: "タイトル"
+        .body__diary-body__form__valuation
+          1日の評価　※五段階評価
+          .body__diary-body__form__valuation__form
+            = f.number_field :valuation
+        .body__diary-body__form__sleep
+          睡眠
+          .body__diary-body__form__sleep__form
+            = f.text_field :sleep, plcaceholer: "睡眠"
+        .body__diary-body__form__feeling
+          気分
+          .body__diary-body__form__feeling__form
+            = f.text_field :feeling
+        .body__diary-body__form__short-term
+          短期の目標
+          .body__diary-body__form__short-term__form
+            = f.text_field :short_term_goals
+        .body__diary-body__form__long-term
+          長期の目標
+          .body__diary-body__form__long-term__form
+            = f.text_field :long_term_goals
+        .body__diary-body__form__plan
+          明日の計画
+          .body__diary-body__form__plan__form
+            = f.text_area :long_term_goals, rows: 3
+        .body__diary-body__form__remark
+          ※備考
+          .body__diary-body__form__remark__form
+            = f.text_field :remark, rows: 3
+        .body__diary-body__form__submit
+          .body__diary-body__form__submit__btn
+            = f.submit '投稿する'
+.footer
+  continuation-diary

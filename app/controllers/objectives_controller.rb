@@ -5,8 +5,7 @@ class ObjectivesController < ApplicationController
 
   def create
     Objective.create(post_params)
-    @user = current_user.id
-    redirect_to user_path(@user)
+    redirect_to user_path(current_user.id)
   end
 
   def show
