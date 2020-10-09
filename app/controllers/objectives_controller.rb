@@ -11,6 +11,8 @@ class ObjectivesController < ApplicationController
   def show
     @objective = Objective.find(params[:id])
     @amount = Amount.new
+    @amounts = Amount.all.where(objective_id: params[:id])
+    @detail = Amount.select("amount").where(objective_id: params[:id])
   end
 
   private

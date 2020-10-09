@@ -2,6 +2,8 @@
   .main-body__objective-body
     .main-body__objective-body__title
       = @objective.aim
+      .main-body__objective-body__title__mypage
+        = link_to "マイページへ戻る", user_path(current_user.id), class: 'btn'
     .main-body__objective-body__field
       .main-body__objective-body__field__topic
         ※本日実践した量もしくは時間を入力してください
@@ -16,17 +18,22 @@
         .main-body__objective-body__info__record__title
           記録一覧
         .main-body__objective-body__info__record__space
-          .main-body__objective-body__info__record__space__date
-            10月10日
-          .main-body__objective-body__info__record__space__amount
-            3時間
+          - @amounts.each do |amount|
+            .main-body__objective-body__info__record__space__amount
+              .main-body__objective-body__info__record__space__amount__date
+                = amount.created_at.strftime("%Y年%-m月%-d日")
+              .main-body__objective-body__info__record__space__amount__amount
+                = amount.amount.to_s + "#{@objective.unit}"
       .main-body__objective-body__info__details
         .main-body__objective-body__info__details__title
           記録の詳細
         .main-body__objective-body__info__details__space
-          .main-body__objective-body__info__details__space__max-amount
-            1日での最大量
-          .main-body__objective-body__info__details__space__average
-            1日あたりの平均
+          .main-body__objective-body__info__details__space__field
+            .main-body__objective-body__info__details__space__field__max-amount
+              1日の最大値
+              = "#{@detail.maximum("amount")}" + "#{@objective.unit}"
+            .main-body__objective-body__info__details__space__field__average
+              1日あたりの平均
+              = "#{@detail.average("amount")}" + "#{@objective.unit}"
 .footer
   continuation-diary

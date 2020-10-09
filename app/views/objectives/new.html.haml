@@ -2,16 +2,25 @@
   .body__objective
     .body__objective__head
       目標を設定する
+      .body__objective__head__mypage
+        = link_to "マイページへ戻る", user_path(current_user.id), class: 'btn'
     .body__objective__topic
-      ※項目を登録してください
-    .body__objective__exsample1
-      例）　目標：ジョギング　単位：km
-    .body__objective__exsample2
-      例）　目標：読書　単位：分
+      ※ご自身が続けていきたいという項目を設定してください
+    .body__objective__exsamples
+      .body__objective__exsamples__exsample
+        例）
+      .body__objective__exsamples__aims
+        %li 目標：読書
+        %li 目標：ジョギング
+        %li 目標：腕立て伏せ
+      .body__objective__exsamples__unit
+        %li 単位：分
+        %li 単位：km
+        %li 単位：回
     .body__objective__registration
       = form_with model: @objective, url: objectives_path, class: :form, local: true do |form|
         = form.text_field :aim, placeholder: :目標, class: :form__title
         = form.text_field :unit, placeholder: :単位, class: :form__text
-        = form.submit '登録する', class: :form__btn
+        = form.submit '設定する', class: :form__btn
 .footer
   continuation-diary
