@@ -5,7 +5,7 @@
       .body__diary-body__title__mypage
         = link_to "マイページへ戻る", user_path(current_user.id), class: 'btn'
     .body__diary-body__form
-      = form_with model: @diary, url:  diary_path, class: :form, method: :update, local: true do |f|
+      = form_with model: @diary, url:  diary_path, class: :form, local: true do |f|
         .bodyz__diary-body__form__title
           タイトル
           .body__diary-body__form__title__form
