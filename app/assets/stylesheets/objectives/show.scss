@@ -30,12 +30,6 @@
         margin-top: 30px;
         display: flex;
         justify-content: space-around;
-        &__topic {
-        }
-        &__amount {
-        }
-        &__unit {
-        }
       }
     }
     &__info {
@@ -47,8 +41,8 @@
         border-top: 1px solid gray;
         border-right: 1px solid gray;
         &__title {
-          height: 80px;
-          line-height: 80px;
+          height: 70px;
+          line-height: 70px;
           font-size: 18px;
           border-bottom: 1px solid gray;
         }
@@ -74,8 +68,8 @@
         width: 50%;
         text-align: center;
         &__title {
-          height: 80px;
-          line-height: 80px;
+          height: 70px;
+          line-height: 70px;
           font-size: 18px;
           color: white;
           background-color: gray;

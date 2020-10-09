@@ -19,7 +19,8 @@
           - @diaries.each do |diary|
             .body__mypage__body__diaries__field__diary
               .body__mypage__body__diaries__field__diary__title
-                = diary.title
+                =link_to diary_path(diary.id) do
+                  - diary.title
               .body__mypage__body__diaries__field__diary__date
                 = diary.created_at.strftime("%Y年%-m月%-d日")
       .body__mypage__body__info

@@ -1,0 +1,39 @@
+.body
+  .body__diary-body
+    .body__diary-body__title
+      = @diary.created_at.strftime("%Y年%-m月%-d日") + "の日記"
+      .body__diary-body__title__mypage
+        = link_to "マイページへ戻る", user_path(current_user.id), class: 'btn'
+    .body__diary-body__form
+      .body__diary-body__form__title
+        = "タイトル : " + "#{@diary.title}"
+      .body__diary-body__form__valuation
+        .body__diary-body__form__valuation__title
+          = "1日の評価 :" + "#{@diary.valuation}"
+        .body__diary-body__form__valuation__topic
+          ※5段階評価(5:良 ← → 悪:1)
+        .body__diary-body__form__sleep
+          = "睡眠 : " + "#{@diary.sleep}"
+          .body__diary-body__form__sleep__form
+        .body__diary-body__form__feeling
+          = "気分 : " + "#{@diary.feeling}"
+          .body__diary-body__form__feeling__form
+        .body__diary-body__form__short-term
+          = "短期の目標 : " + "#{@diary.short_term_goals}"
+          .body__diary-body__form__short-term__form
+        .body__diary-body__form__long-term
+          = "長期の目標 : " + "#{@diary.long_term_goals}"
+          .body__diary-body__form__long-term__form
+        .body__diary-body__form__plan
+          = "明日の計画 : " + "#{@diary.plan}"
+          .body__diary-body__form__plan__form
+        .body__diary-body__form__remark
+          = "備考 : " + "#{@diary.remark}"
+          .body__diary-body__form__remark__form
+        .body__diary-body__form__submit
+          .body__diary-body__form__submit__btn-e
+            = link_to "編集する", edit_diary_path, class: :form
+          .body__diary-body__form__submit__btn-d
+            = link_to "削除する", diary_path(@diary.id), method: :delete, class: :form
+.footer
+  continuation-diary
