@@ -45,12 +45,13 @@
           border-bottom: 1px solid gray;
         }
         &__field {
-          height: 100%;
+          height: 400px;
           &__diary {
             height: 100px;
             margin: 20px 20px;
             position: relative;
             &__title {
+              text-decoration: none;
               padding: 10px 40px;
             }
             &__date {
@@ -94,4 +95,8 @@
   font-size: 30px;
   background-color: #EEEEEE;
   text-align: center;
+}
+
+#a {
+  text-decoration: none;
 }

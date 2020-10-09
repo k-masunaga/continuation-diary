@@ -1,0 +1,21 @@
+.d-body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #EEEEEE;
+  &__diary-body {
+    height: 150px;
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+    background-color: white;
+    &__delete {
+      height: 100px;
+      line-height: 100px;
+    }
+    &__back{
+      font-size: 14px;
+    }
+  }
+}
