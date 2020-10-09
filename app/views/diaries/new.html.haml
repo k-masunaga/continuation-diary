@@ -16,7 +16,6 @@
           .body__diary-body__form__valuation__topic
             ※5段階評価(5:良 ← → 悪:1)
           .body__diary-body__form__valuation__form
-            -# = f.number_field :valuation
             = f.radio_button :valuation, "5"
             = f.label :valuation, "5", {value: "5".to_i , style: "display: inline-block;"}
             = f.radio_button :valuation, "4"
