@@ -25,6 +25,7 @@ class DiariesController < ApplicationController
   def destroy
     diary = Diary.find(params[:id])
     diary.destroy
+    redirect_to diary_delete_path(params[:id])
   end
 
   private

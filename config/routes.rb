@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   end
 
   resources :diaries, only: [:new, :create, :show, :edit, :update, :destroy] do
-    # get 'delete'
-    member do
-      get 'show'
-      post 'show'
-      delete 'show'
-    end
+    get 'delete'
+    # member do
+    #   get 'show'
+    #   post 'show'
+    #   delete 'show'
+    # end
   end
 end
