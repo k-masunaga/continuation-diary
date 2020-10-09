@@ -35,5 +35,10 @@
             .main-body__objective-body__info__details__space__field__average
               1日あたりの平均
               = "#{@detail.average("amount")}" + "#{@objective.unit}"
+    .main-body__objective-body__delete
+      .main-body__objective-body__delete__btn
+        = link_to "この目標を削除する", objective_path(@objective.id),method: :delete, class: :form
+    .main-body__objective-body__notice
+      ※削除するとこれまで登録した記録が確認できなくなります。ご注意ください
 .footer
   continuation-diary

@@ -88,5 +88,27 @@
         }
       }
     }
+    &__delete {
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid gray;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      &__btn {
+        margin: 30px 0;
+        padding: 5px 20px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: gray;
+      }
+    }
+    &__notice {
+      text-align: center;
+      margin-bottom: 20px;
+      color: red;
+    }
   }
 }

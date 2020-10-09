@@ -1,0 +1,16 @@
+.d-body__object-body {
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  background-color: white;
+  &__delete {
+    height: 120px;
+    line-height: 60px;
+    font-size: 20px;
+    color: red;
+  }
+  &__back {
+    height: 80px;
+    line-height: 80px;
+  }
+}
