@@ -11,7 +11,6 @@ class AmountsController < ApplicationController
 
   private
   def amount_params
-    # params.require(:amount).permit(:amount, :objective_id)
     params.require(:amount).permit(:amount).merge(objective_id: params[:objective_id])
   end
 end

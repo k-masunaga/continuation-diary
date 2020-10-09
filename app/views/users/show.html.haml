@@ -7,28 +7,29 @@
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
     .body__mypage__create
       .body__mypage__create__diary
-        -# = link_to "記録を投稿する", objective_amount_index_path, method: :get, class: 'btn'
-        -# .body__mypage__create__diary__notice
-        -#   ※目標設定後に投稿可能になります。
+        = link_to "日記を投稿する", new_diary_path, method: :get, class: 'btn'
+        .body__mypage__create__diary__notice
       .body__mypage__create__objective
         = link_to "目標を設定する", new_objective_path, method: :get, class: 'btn'
     .body__mypage__body
       .body__mypage__body__diaries
         .body__mypage__body__diaries__topic
-          記録一覧
+          日記一覧
         .body__mypage__body__diaries__field
-          .body__mypage__body__diaries__field__diary
-            .body__mypage__body__diaries__field__diary__title
-              タイトル
-            .body__mypage__body__diaries__field__diary__date
-              2020年9月3日
+          - @diaries.each do |diary|
+            .body__mypage__body__diaries__field__diary
+              .body__mypage__body__diaries__field__diary__title
+                = diary.title
+              .body__mypage__body__diaries__field__diary__date
+                = diary.created_at.strftime("%Y年%-m月%-d日")
       .body__mypage__body__info
         .body__mypage__body__info__title
           設定した目標一覧
         .body__mypage__body__info__details
           - @objectives.each do |objective|
-            .body__mypage__body__info__details__detail
-              = link_to objective_path(objective.id) do
-                - objective.aim + "の記録を追加"
+            .body__mypage__body__info__details__space
+              .body__mypage__body__info__details__space__detail
+                = link_to objective_path(objective.id) do
+                  - objective.aim + "の記録を追加"
 .footer
   continuation-diary

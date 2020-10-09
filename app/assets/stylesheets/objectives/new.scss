@@ -6,24 +6,36 @@
     height: 100px;
     line-height: 100px;
     text-align: center;
+    position: relative;
     font-size: 20px;
     border-bottom: 1px solid gray;
+    &__mypage {
+      font-size: 12px;
+      position: absolute;
+      right: 20px;
+      bottom: 0;
+    }
   }
   &__topic {
-    margin-top: 10px;
-    text-align: center;
+    margin: 20px 0;
+    text-align: center
   }
-  &__exsample1 {
-    text-align: center;
-  }
-  &__exsample2 {
-    padding-bottom: 10px;
-    text-align: center;
+  &__exsamples {
+    height: 100px;
+    display: flex;
+    justify-content: center;
     border-bottom: 1px solid gray;
+    &__aims {
+      list-style: none;
+    }
+    &__unit {
+      margin-left: 10px;
+      list-style: none;
+    }
   }
   &__registration {
-    height: 80px;
-    line-height: 80px;
+    height: 120px;
+    line-height: 120px;
     font-size: 18px;
     display: flex;
     justify-content: center;

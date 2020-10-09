@@ -5,13 +5,14 @@ class ObjectivesController < ApplicationController
 
   def create
     Objective.create(post_params)
-    @user = current_user.id
-    redirect_to user_path(@user)
+    redirect_to user_path(current_user.id)
   end
 
   def show
     @objective = Objective.find(params[:id])
     @amount = Amount.new
+    @amounts = Amount.all.where(objective_id: params[:id])
+    @detail = Amount.select("amount").where(objective_id: params[:id])
   end
 
   private

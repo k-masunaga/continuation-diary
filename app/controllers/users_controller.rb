@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @objectives = Objective.all.where(user_id: current_user.id)
+    @diaries = Diary.all.where(user_id: current_user.id)
   end
 
   def delete

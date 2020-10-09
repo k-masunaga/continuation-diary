@@ -1,0 +1,58 @@
+.body
+  .body__diary-body
+    .body__diary-body__title
+      日記の投稿
+      .body__diary-body__title__mypage
+        = link_to "マイページへ戻る", user_path(current_user.id), class: 'btn'
+    .body__diary-body__form
+      = form_with model: @diary, url: diaries_path, class: :form, local: true do |f|
+        .body__diary-body__form__title
+          タイトル
+          .body__diary-body__form__title__form
+            = f.text_field :title, :size=>"50",class: :form__title, placeholder: "※30文字まで", maxlength: "31"
+        .body__diary-body__form__valuation
+          .body__diary-body__form__valuation__title
+            1日の評価
+          .body__diary-body__form__valuation__topic
+            ※5段階評価(5:良 ← → 悪:1)
+          .body__diary-body__form__valuation__form
+            -# = f.number_field :valuation
+            = f.radio_button :valuation, "5"
+            = f.label :valuation, "5", {value: "5".to_i , style: "display: inline-block;"}
+            = f.radio_button :valuation, "4"
+            = f.label :valuation, "4", {value: "4".to_i , style: "display: inline-block;"}
+            = f.radio_button :valuation, "3"
+            = f.label :valuation, "3", {value: "3".to_i , style: "display: inline-block;"}
+            = f.radio_button :valuation, "2"
+            = f.label :valuation, "2", {value: "2".to_i , style: "display: inline-block;"}
+            = f.radio_button :valuation, "1"
+            = f.label :valuation, "1", {value: "1".to_i , style: "display: inline-block;"}
+        .body__diary-body__form__sleep
+          睡眠
+          .body__diary-body__form__sleep__form
+            = f.text_field :sleep, :size=>"40", plcaceholer: "睡眠"
+        .body__diary-body__form__feeling
+          気分
+          .body__diary-body__form__feeling__form
+            = f.text_field :feeling, :size=>"40"
+        .body__diary-body__form__short-term
+          短期の目標
+          .body__diary-body__form__short-term__form
+            = f.text_field :short_term_goals, :size=>"50"
+        .body__diary-body__form__long-term
+          長期の目標
+          .body__diary-body__form__long-term__form
+            = f.text_field :long_term_goals, :size=>"50"
+        .body__diary-body__form__plan
+          明日の計画
+          .body__diary-body__form__plan__form
+            = f.text_area :plan, :size=>"40x5"
+        .body__diary-body__form__remark
+          ※備考
+          .body__diary-body__form__remark__form
+            = f.text_area :remark, :size=>"40"
+        .body__diary-body__form__submit
+          .body__diary-body__form__submit__btn
+            = f.submit '投稿する'
+.footer
+  continuation-diary
