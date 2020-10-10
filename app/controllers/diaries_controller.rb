@@ -28,6 +28,10 @@ class DiariesController < ApplicationController
     redirect_to diary_delete_path(params[:id])
   end
 
+  def all
+    @diaries = Diary.all.where(user_id: current_user.id)
+  end
+
   private
   def diary_params
     params.require(:diary).permit(

@@ -11,8 +11,9 @@ class ObjectivesController < ApplicationController
   def show
     @objective = Objective.find(params[:id])
     @amount = Amount.new
-    @amounts = Amount.all.where(objective_id: params[:id])
+    @amounts = Amount.all.where(objective_id: params[:id]).order("created_at DESC").first(5)
     @detail = Amount.select("amount").where(objective_id: params[:id])
+    @sum = Amount.all.sum(:amount)
   end
 
   def destroy

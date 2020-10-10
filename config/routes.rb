@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :diaries, only: [:new, :create, :show, :edit, :update, :destroy] do
     get 'delete'
-    get 'all'
   end
+
+  resources :logs, only: [:show]
 end
