@@ -13,7 +13,7 @@ class ObjectivesController < ApplicationController
     @amount = Amount.new
     @amounts = Amount.all.where(objective_id: params[:id]).order("created_at DESC").first(5)
     @detail = Amount.select("amount").where(objective_id: params[:id])
-    @sum = Amount.all.sum(:amount)
+    # @sum = Amount.select.sum(:amount).where(objective_id: params[:id])
   end
 
   def destroy

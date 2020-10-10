@@ -16,7 +16,7 @@
     .main-body__objective-body__info
       .main-body__objective-body__info__record
         .main-body__objective-body__info__record__title
-          記録一覧
+          = link_to "記録一覧", amount_path, method: :get
         .main-body__objective-body__info__record__space
           - @amounts.each do |amount|
             .main-body__objective-body__info__record__space__amount

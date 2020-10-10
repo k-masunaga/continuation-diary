@@ -8,9 +8,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :amounts, only: [:show]
+
   resources :objectives, only: [:new, :create,:show, :destroy] do
     get 'delete'
-    resources :amounts, only: [:create]
+    resources :amounts, only: [:create] do
+    end
   end
 
   resources :diaries, only: [:new, :create, :show, :edit, :update, :destroy] do
