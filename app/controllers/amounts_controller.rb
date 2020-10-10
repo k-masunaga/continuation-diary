@@ -1,6 +1,5 @@
 class AmountsController < ApplicationController
   def new
-    # @objectives = Objective.all.where(user_id: current_user.id)
     @amount = Amount.new
   end
 
@@ -12,6 +11,12 @@ class AmountsController < ApplicationController
   def show
     @amounts = Amount.all.where(objective_id: params[:id])
     @objective = Objective.find(params[:id])
+  end
+
+  def destroy
+    amount = Amount.find(params[:id])
+    amount.destroy
+    redirect_to objective_path(id: amount.objective_id)
   end
 
   private

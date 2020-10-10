@@ -32,7 +32,7 @@
             .main-body__objective-body__info__details__space__field__max-amount
               = "1日の最大値：" + "#{@detail.maximum("amount")}" + "#{@objective.unit}"
             .main-body__objective-body__info__details__space__field__average
-              = "トータル：" + "#{@sum}" + "#{@objective.unit}"
+              = "トータル：" + "#{@detail.sum("amount")}" + "#{@objective.unit}"
     .main-body__objective-body__delete
       .main-body__objective-body__delete__btn
         = link_to "この目標を削除する", objective_path(@objective.id),method: :delete, class: :form
