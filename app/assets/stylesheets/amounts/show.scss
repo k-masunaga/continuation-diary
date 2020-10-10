@@ -1,0 +1,38 @@
+.amount-body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #EEEEEE;
+  &__field {
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    &__title {
+      height: 100px;
+      line-height: 100px;
+      font-size: 20px;
+      text-align: center;
+      position: relative;
+      &__mypage {
+        position: absolute;
+        right: 20px;
+        bottom: 0;
+        font-size: 13px;
+      }
+    }
+    &__logs {
+      height: 100%;
+      border-top: 1px solid gray;
+      &__log {
+        height: 60px;
+        margin: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        &__date {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

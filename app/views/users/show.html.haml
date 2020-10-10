@@ -14,7 +14,7 @@
     .body__mypage__body
       .body__mypage__body__diaries
         .body__mypage__body__diaries__topic
-          日記一覧
+          = link_to "日記一覧", log_path
         .body__mypage__body__diaries__field
           - @diaries.each do |diary|
             .body__mypage__body__diaries__field__diary

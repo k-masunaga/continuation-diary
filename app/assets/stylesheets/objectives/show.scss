@@ -45,6 +45,10 @@
           line-height: 70px;
           font-size: 18px;
           border-bottom: 1px solid gray;
+          a {
+            text-decoration: none;
+            color: black;
+          }
         }
         &__space {
           height: 300px;

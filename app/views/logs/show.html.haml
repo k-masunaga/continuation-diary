@@ -1,0 +1,16 @@
+.log-body
+  .log-body__field
+    .log-body__field__diaries
+      日記一覧
+      .log-body__field__diaries__mypage
+        = link_to "マイページへ戻る", user_path(current_user.id), class: 'btn'
+    .log-body__field__diaries-space
+      - @diaries.each do |diary|
+        .log-body__field__diaries-space__diary
+          .log-body__field__diaries-space__diary__title
+            =link_to diary_path(diary.id) do
+              - diary.title
+          .log-body__field__diaries-space__diary__date
+            = diary.created_at.strftime("%Y年%-m月%-d日")
+.footer
+  continuation-diary
