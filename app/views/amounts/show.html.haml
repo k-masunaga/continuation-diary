@@ -11,5 +11,7 @@
             = amount.created_at.strftime("%Y年%-m月%-d日")
           .amount-body__field__logs__log__amount
             = amount.amount.to_s + "#{@objective.unit}"
+          .amount-body__field__logs__log__delete
+            = link_to "削除", amount_path, method: :delete
 .footer
   continuation-diary

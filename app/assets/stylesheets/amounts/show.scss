@@ -32,6 +32,17 @@
         &__date {
           font-size: 13px;
         }
+        &__delete {
+          height: 20px;
+          font-size: 13px;
+          padding: 0 10px;
+          border-radius: 3px;
+          background-color: gray;
+          a {
+            text-decoration: none;
+            color: white;
+          }
+        }
       }
     }
   }
